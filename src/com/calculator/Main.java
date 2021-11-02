@@ -2,6 +2,7 @@ package com.calculator;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.math.*;
 
 public class Main {
 	
@@ -11,8 +12,37 @@ public class Main {
 	        System.out.println(firstNumberDouble);
 	        char operator = pobierzOperator();
 	        System.out.println(firstNumberDouble.toString()+operator+secondNumberDouble.toString());
-	           
+	        double wynik;
 	        
+	        if ( operator == '*') {
+	    
+	        	System.out.println (wynik = firstNumberDouble * secondNumberDouble);
+	        }
+	        if ( operator == '/') {
+	        	System.out.println (wynik = firstNumberDouble / secondNumberDouble);
+	        }
+	        if ( operator == '+') {
+	        System.out.println (wynik = firstNumberDouble + secondNumberDouble);
+	        }
+	        if ( operator == '-') {
+	        	System.out.println (wynik = firstNumberDouble - secondNumberDouble);
+	        	
+	        }
+	        if ( operator == '%') {
+	        	System.out.println (wynik = firstNumberDouble % secondNumberDouble);
+	        	
+	        }
+	        if ( operator == '`') {
+	        	System.out.println("Math.sqrt(" + firstNumberDouble + ") =" +Math.sqrt(firstNumberDouble));
+	        	
+	        }
+	        if ( operator == '^') {
+	        	double power = Math.pow(firstNumberDouble, secondNumberDouble);
+	        	System.out.println (power);
+	        	
+	        }
+	        
+	          
 	}
 	
     
@@ -25,17 +55,15 @@ public class Main {
 	            	return pobierzOperator();
 	            }
 	            char operator = equaison.charAt(0);
-	            List<Character> listOfOperators = Arrays.asList('+','-','*','/');
+	            List<Character> listOfOperators = Arrays.asList('+','-','*','/','%','^','`');
 	            if (!listOfOperators.contains(operator)) {
 	            	System.out.println("Operator niedozwolony");
 	            	return pobierzOperator();
 	            }
 	            return operator;
-	            
-	        	 }
 	
-	
-	
+	            }
+
 	static Double pobierzLiczbeDouble() {
 		System.out.println("Wprowadz liczbe");	
 		   Scanner scan = new Scanner(System.in);
